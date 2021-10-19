@@ -11,11 +11,13 @@ import { useSpacing } from '../composable/use-spacing'
 
 type Variant = 'primary' | 'secondary'
 
+// How to define all the ButtonHTMLAttributes here?
 export const OButtonProps = {
     variant: {
         type: String as PropType<Variant>,
         default: 'primary',
     },
+    // We can hand define the types for all ButtonHTMLAttributes, but that's so tedious!
     type: {
         type: String as PropType<ButtonHTMLAttributes['type']>,
         default: 'button',
