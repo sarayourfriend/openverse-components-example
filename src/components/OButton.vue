@@ -1,5 +1,5 @@
 <template>
-    <o-box :as="as" :type="type" :class="classes">
+    <o-box :as="as" :type="type" :class="classes" v-bind="$props">
         <slot />
     </o-box>
 </template>
@@ -7,7 +7,6 @@
 <script lang="ts">
 import { defineComponent, PropType, ButtonHTMLAttributes, useCssModule } from 'vue'
 import OBox, { OBoxProps, AsProp } from './OBox.vue'
-import { useSpacing } from '../composable/use-spacing'
 
 type Variant = 'primary' | 'secondary'
 
@@ -35,10 +34,8 @@ export default defineComponent({
 
         return {
             classes: {
-                ...useSpacing(props),
                 [style.primary]: props.variant === 'primary',
                 [style.secondary]: props.variant === 'secondary',
-
             }
         }
     }
