@@ -1,12 +1,12 @@
 <template>
-    <o-box :class="classes" v-bind="$props">
+    <o-box as="button" :class="classes" v-bind="$props">
         <slot />
     </o-box>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType, ButtonHTMLAttributes, useCssModule } from 'vue'
-import OBox, { OBoxProps, AsProp } from './OBox.vue'
+import OBox, { OBoxProps } from './OBox.vue'
 
 type Variant = 'primary' | 'secondary'
 
@@ -22,7 +22,6 @@ export const OButtonProps = {
         default: 'button',
     },
     ...OBoxProps,
-    as: AsProp('button'),
 }
 
 export default defineComponent({

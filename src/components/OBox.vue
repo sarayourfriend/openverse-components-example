@@ -14,13 +14,15 @@ export const AsProp = (def: keyof JSX.IntrinsicElements | Component) => ({
 })
 
 export const OBoxProps = {
-    as: AsProp('div'),
     ...SpacingPropTypes
   }
 
 export default defineComponent({
   name: 'OBox',
-  props: OBoxProps,
+  props: {
+    ...OBoxProps,
+    as: AsProp('div'),
+  },
   setup(props) {
     return {
       spacingClasses: useSpacing(props)
