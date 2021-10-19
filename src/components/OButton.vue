@@ -1,5 +1,5 @@
 <template>
-    <o-box :as="as" :type="type" :class="classes" v-bind="$props">
+    <o-box :class="classes" v-bind="$props">
         <slot />
     </o-box>
 </template>
